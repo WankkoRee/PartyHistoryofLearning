@@ -1,0 +1,245 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+    background-color: transparent;
+    display: none;
+    opacity: 0;
+}
+
+.ranking-list-all.data-v-a1de6bb4 {
+    color: #fff;
+}
+
+.ranking-bg.data-v-a1de6bb4 {
+    width: 750rpx;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.rankingtop-box.data-v-a1de6bb4 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.rankingtop-img.data-v-a1de6bb4 {
+    width: 750rpx;
+    height: 248rpx;
+}
+
+.ranking-list-box.data-v-a1de6bb4 {
+    position: fixed;
+    top: 210rpx;
+    left: 62rpx;
+    z-index: 3;
+    width: 626rpx;
+    background-color: rgba(88,13,44,.5);
+    border-radius: 30rpx;
+}
+
+.ranking-list-box2.data-v-a1de6bb4 {
+    position: fixed;
+    top: 174rpx;
+    left: 0;
+    z-index: 3;
+    width: 750rpx;
+}
+
+.ranking-list.data-v-a1de6bb4 {
+    margin-top: 122rpx;
+}
+
+.ranking-list-detail.data-v-a1de6bb4 {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 15rpx;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.ranking-list-info.data-v-a1de6bb4 {
+    width: 585rpx;
+    height: 99rpx;
+    position: relative;
+}
+
+.ranking-info-bg.data-v-a1de6bb4 {
+    width: 585rpx;
+    height: 104rpx;
+    border-radius: 10rpx;
+    opacity: .5;
+}
+
+.crown-box.data-v-a1de6bb4 {
+    position: absolute;
+    top: -12rpx;
+    right: 0;
+}
+
+.crown-img.data-v-a1de6bb4 {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.user-info.data-v-a1de6bb4 {
+    width: 525rpx;
+    height: 104rpx;
+    padding: 0 30rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ava-img.data-v-a1de6bb4 {
+    width: 88rpx;
+    height: 88rpx;
+    border: 4rpx solid #f3b400;
+    border-radius: 50%;
+    margin-top: 5rpx;
+}
+
+.line.data-v-a1de6bb4 {
+    background-color: #fff;
+    opacity: .2;
+    height: 2rpx;
+    width: 585rpx;
+    margin-top: 15rpx;
+}
+
+.text-color.data-v-a1de6bb4 {
+    color: #ff9;
+}
+
+.duanwei.data-v-a1de6bb4 {
+    width: 106rpx;
+    padding: 0 2rpx;
+    background: rgba(254,251,149,0);
+    border: 1rpx solid #fff;
+    border-radius: 12rpx;
+}
+
+.rankingbottom.data-v-a1de6bb4 {
+    width: 750rpx;
+    height: 190rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.rankingbottom-img.data-v-a1de6bb4 {
+    width: 750rpx;
+    height: 190rpx;
+}
+
+.myinfo-box.data-v-a1de6bb4 {
+    position: absolute;
+    top: -34rpx;
+    left: 0;
+    width: 750rpx;
+    text-align: center;
+    z-index: 4;
+}
+
+.myinfo-ava.data-v-a1de6bb4 {
+    width: 145rpx;
+    height: 144rpx;
+    border: 4rpx solid #f3b400;
+    border-radius: 50%;
+}
+
+.myinfo-ava>image.data-v-a1de6bb4 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.scode.data-v-a1de6bb4 {
+    margin-left: 75rpx;
+}
+
+.ranking-img.data-v-a1de6bb4 {
+    position: fixed;
+    top: 68rpx;
+    width: 618rpx;
+    height: 200rpx;
+    z-index: 4;
+    left: 66rpx;
+}
+
+.ranking-img image.data-v-a1de6bb4 {
+    width: 100%;
+    height: 100%;
+}
+
+.pk-user-count.data-v-a1de6bb4 {
+    position: absolute;
+    top: 10rpx;
+    z-index: 3;
+}
+
+.time-tab.data-v-a1de6bb4 {
+    position: fixed;
+    top: 236rpx;
+    width: 264rpx;
+    height: auto;
+    left: calc(50% - 132rpx);
+    text-align: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 0 0 10rpx 10rpx;
+    color: #a1a1a1;
+    z-index: 99999;
+}
+
+.time-tab>view.data-v-a1de6bb4 {
+    width: 50%;
+    height: 60rpx;
+    line-height: 60rpx;
+    position: relative;
+}
+
+.time-tab>view.data-v-a1de6bb4:nth-child(1)::after {
+    content: "|";
+    color: #fff;
+    position: absolute;
+    right: 0;
+}
+
+.active.data-v-a1de6bb4 {
+    color: #fff;
+}
+
+.person-tab.data-v-a1de6bb4 {
+    top: 72rpx;
+    background-color: transparent;
+}
+
+.active2.data-v-a1de6bb4 {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.ranking-box.data-v-a1de6bb4 {
+    position: absolute;
+    left: 150rpx;
+    top: 106rpx;
+    width: 260rpx;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 30rpx;
+    font-weight: 700;
+}

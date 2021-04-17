@@ -1,0 +1,103 @@
+<view class="ranking-list-all onBothCenter data-v-a1de6bb4">
+    <image class="ranking-bg data-v-a1de6bb4" src="../../static/rankinglist_bg.png.jpg"></image>
+    <view class="rankingtop-box data-v-a1de6bb4">
+        <image class="rankingtop-img data-v-a1de6bb4" src="../../static/rankinglist_top.png"></image>
+    </view>
+    <view class="ranking-img data-v-a1de6bb4">
+        <view class="pk-user-count data-v-a1de6bb4" style="top:-36rpx;width:100%;text-align:center;" wx:if="{{$root.m0}}">{{tips}}</view>
+        <view class="time-tab person-tab data-v-a1de6bb4">
+            <view bindtap="__e" class="{{['data-v-a1de6bb4',currentIndex===0?'active2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleCurrentIndex',[0] ] ] ] ]}}">个人</view>
+            <view bindtap="__e" class="{{['data-v-a1de6bb4',currentIndex===1?'active2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleCurrentIndex',[1] ] ] ] ]}}">团队</view>
+        </view>
+        <image class="data-v-a1de6bb4" src="../../static/ranking.png"></image>
+    </view>
+    <view class="time-tab data-v-a1de6bb4" wx:if="{{currentIndex===0}}">
+        <view bindtap="__e" class="{{['data-v-a1de6bb4',personal_timeTabIndex===0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'togglePersonalIndex',[0] ] ] ] ]}}">总榜</view>
+        <view bindtap="__e" class="{{['data-v-a1de6bb4',personal_timeTabIndex===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'togglePersonalIndex',[1] ] ] ] ]}}">月榜</view>
+    </view>
+    <view class="time-tab data-v-a1de6bb4" wx:if="{{currentIndex===1}}">
+        <view bindtap="__e" class="{{['data-v-a1de6bb4',group_timeTabIndex===0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleGroupIndex',[0] ] ] ] ]}}">总榜</view>
+        <view bindtap="__e" class="{{['data-v-a1de6bb4',group_timeTabIndex===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleGroupIndex',[1] ] ] ] ]}}">月榜</view>
+    </view>
+    <view class="ranking-box data-v-a1de6bb4">
+        <view class="ranking-list-box data-v-a1de6bb4" style="{{'height:'+list_height+';'}}"></view>
+        <view class="ranking-list-box2 data-v-a1de6bb4" style="{{'height:'+list_height+';'}}">
+            <scroll-view class="ranking-list data-v-a1de6bb4" scrollY="{{true}}" style="{{'height:'+list_maxheight+';'}}">
+                <view class="ranking-list-detail data-v-a1de6bb4" wx:for="{{user_rank_list}}" wx:key="id">
+                    <view class="ranking-list-info data-v-a1de6bb4">
+                        <image class="ranking-info-bg data-v-a1de6bb4" src="../../static/top1.jpg" wx:if="{{index===0}}"></image>
+                        <image class="ranking-info-bg data-v-a1de6bb4" src="../../static/top2.jpg" wx:if="{{index===1}}"></image>
+                        <image class="ranking-info-bg data-v-a1de6bb4" src="../../static/top3.jpg" wx:if="{{index===2}}"></image>
+                        <view class="crown-box data-v-a1de6bb4">
+                            <image class="crown-img data-v-a1de6bb4" src="../../static/crown1.png" wx:if="{{index===0}}"></image>
+                            <image class="crown-img data-v-a1de6bb4" src="../../static/crown2.png" wx:if="{{index===1}}"></image>
+                            <image class="crown-img data-v-a1de6bb4" src="../../static/crown3.png" wx:if="{{index===2}}"></image>
+                        </view>
+                        <view class="onBothEnd user-info data-v-a1de6bb4" wx:if="{{currentIndex===0}}">
+                            <view class="onXCenter data-v-a1de6bb4">
+                                <view class="font-40size font-boldweight text-color data-v-a1de6bb4">{{index+1}}</view>
+                                <view class="mar-30left data-v-a1de6bb4">
+                                    <image class="ava-img data-v-a1de6bb4" src="{{item.avatar}}"></image>
+                                </view>
+                            </view>
+                            <view class="data-v-a1de6bb4" style="max-width:200rpx;">
+                                <view class="font-24size single-line-crop1 data-v-a1de6bb4">{{item.nickname}}</view>
+                                <view class="onXCenter mar-10top data-v-a1de6bb4">
+                                    <view class="font-22size mar-15right text-color data-v-a1de6bb4">{{'LV'+(item.level||'0')}}</view>
+                                    <view class="font-20size duanwei onBothCenter data-v-a1de6bb4">{{item.level_name||'黑铁'}}</view>
+                                </view>
+                            </view>
+                            <view class="data-v-a1de6bb4" style="text-align:left;">
+                                <view class="font-24size single-line-crop1 data-v-a1de6bb4" style="width:160rpx;height:32rpx;">{{item.city||''}}</view>
+                                <view class="font-24size data-v-a1de6bb4" style="width:160rpx;">{{'得分'+(item.exp||'0')}}</view>
+                            </view>
+                        </view>
+                        <view class="onBothEnd user-info data-v-a1de6bb4" wx:if="{{currentIndex===1}}">
+                            <view class="onXCenter data-v-a1de6bb4" style="width:74rpx;">
+                                <view class="font-40size font-boldweight text-color data-v-a1de6bb4">{{index+1}}</view>
+                            </view>
+                            <view class="data-v-a1de6bb4" style="min-width:320rpx;max-width:320rpx;margin-left:10rpx;">
+                                <view class="font-24size multi-line-crop2 data-v-a1de6bb4" style="white-space:pre-wrap;">{{item.team_name}}</view>
+                                <view class="onXCenter mar-10top data-v-a1de6bb4">
+                                    <view class="font-22size mar-15right text-color data-v-a1de6bb4" style="white-space:nowrap;">{{'平均经验：'+(item.exp||'0')}}</view>
+                                </view>
+                            </view>
+                            <view class="font-24size data-v-a1de6bb4" style="width:160rpx;text-align:right;">{{'胜率'+(item.win_rate||'0')+'%'}}</view>
+                        </view>
+                    </view>
+                    <view class="line data-v-a1de6bb4" wx:if="{{index!=user_rank_list.length-1}}"></view>
+                </view>
+                <view class="data-v-a1de6bb4" style="height:60rpx;width:auto;"></view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="rankingbottom data-v-a1de6bb4">
+        <image class="rankingbottom-img data-v-a1de6bb4" src="../../static/rankinglist_bottom.png"></image>
+        <view class="myinfo-box onBothCenter data-v-a1de6bb4">
+            <view class="data-v-a1de6bb4" wx:if="{{currentIndex===0}}">
+                <image class="myinfo-ava data-v-a1de6bb4" src="{{user.avatar}}"></image>
+                <view class="onBothCenter font-30size font-boldweight data-v-a1de6bb4">
+                    <view class="data-v-a1de6bb4">{{'名次 '+(user.top||'0')}}</view>
+                    <block wx:if="{{personal_timeTabIndex===0}}">
+                        <view class="scode data-v-a1de6bb4">{{'得分 '+(user.experience||'0')}}</view>
+                        <view class="scode data-v-a1de6bb4">{{'等级 '+(user.expInfo.lever||'0')}}</view>
+                    </block>
+                    <block wx:else>
+                        <view class="scode data-v-a1de6bb4">{{'得分 '+(user.exp_month||'0')}}</view>
+                        <view class="scode data-v-a1de6bb4" style="width:100rpx;"></view>
+                    </block>
+                </view>
+            </view>
+            <view class="data-v-a1de6bb4" wx:else>
+                <view class="myinfo-ava data-v-a1de6bb4" style="position:relative;margin:0 auto 10rpx auto;">
+                    <image class="data-v-a1de6bb4" src="{{user.avatar}}"></image>
+                    <view class="ranking-box data-v-a1de6bb4">{{'名次 '+(user.rank_num||'0')}}</view>
+                </view>
+                <view class="onBothCenter font-30size font-boldweight data-v-a1de6bb4">
+                    <view class="data-v-a1de6bb4">{{'团队平均经验值 '+(user.rank_exp||'0')}}</view>
+                    <view class="data-v-a1de6bb4" style="margin-left:40rpx;">{{'平均胜率 '+(user.win_percent==='暂无胜率'?user.win_percent:user.win_percent+'%')}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "答题",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "study-room-card": "/components/study-room-card/study-room-card"
+    }
+}

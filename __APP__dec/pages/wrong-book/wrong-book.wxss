@@ -1,0 +1,124 @@
+page {
+    background-color: #560c27;
+}
+
+.box.data-v-0bdea0b4 {
+    position: relative;
+    padding: 80rpx 0 100rpx;
+}
+
+.box-bg.data-v-0bdea0b4 {
+    width: 750rpx;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.head-box.data-v-0bdea0b4 {
+    padding: 0 94rpx;
+    position: relative;
+}
+
+.head-image.data-v-0bdea0b4 {
+    width: 41rpx;
+    height: 69rpx;
+}
+
+.head-content.data-v-0bdea0b4 {
+    color: #fff;
+}
+
+.content-box.data-v-0bdea0b4 {
+    margin-top: 20rpx;
+    padding: 0 36rpx;
+    color: #3d0411;
+    width: 678rpx;
+}
+
+.content-head>image.data-v-0bdea0b4 {
+    width: 618rpx;
+    height: 137rpx;
+}
+
+.content.data-v-0bdea0b4 {
+    width: 676rpx;
+    min-height: 979rpx;
+    background: #f8ced2;
+    border-radius: 30rpx;
+    margin-top: -60rpx;
+}
+
+.content-title.data-v-0bdea0b4 {
+    padding: 0 70rpx;
+}
+
+.content-title>text.data-v-0bdea0b4 {
+    margin-top: 86rpx;
+}
+
+.content-title2.data-v-0bdea0b4 {
+    padding: 120rpx 70rpx 0;
+}
+
+.content-content.data-v-0bdea0b4 {
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+    padding-bottom: 50rpx;
+}
+
+.content-row.data-v-0bdea0b4 {
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.content-row-row.data-v-0bdea0b4 {
+    position: relative;
+}
+
+.answer-box.data-v-0bdea0b4 {
+    width: 539rpx;
+    min-height: 96rpx;
+    background: #f7a51e;
+    border: 5rpx solid #3d030f;
+    border-radius: 10rpx;
+    z-index: 2;
+}
+
+.answer-box text.data-v-0bdea0b4 {
+    padding: 10rpx 20rpx;
+}
+
+.answer-image.data-v-0bdea0b4 {
+    width: 539rpx;
+    height: 20rpx;
+    background: #fff;
+    border: 5rpx solid #3d030f;
+    border-radius: 0 0 14rpx 14rpx;
+    bottom: -10rpx;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.answer-image image.data-v-0bdea0b4 {
+    width: 100%;
+    height: 100%;
+}
+
+.yellow.data-v-0bdea0b4 {
+    background-color: #f7a51e!important;
+}
+
+.light-green.data-v-0bdea0b4 {
+    background-color: #c2f067!important;
+}
+
+.red.data-v-0bdea0b4 {
+    background-color: #e55354!important;
+}
+
+.white.data-v-0bdea0b4 {
+    background-color: #fff!important;
+}
