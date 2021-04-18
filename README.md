@@ -18,7 +18,17 @@
 
    - `user_id`形如`123456`
 
-4. 运行`一起刷党史.py`
+4. 将获取到的个人数据填入`一起刷党史.py`
+
+   ```python
+   # 用户信息设置
+   device_info = '{"albumAuthorized":true,"benchmarkLevel":-1,"bluetoothEnabled":false,"brand":"microsoft","cameraAuthorized":true,"fontSizeSetting":15,"language":"zh_CN","locationAuthorized":true,"locationEnabled":true,"microphoneAuthorized":true,"model":"microsoft","notificationAuthorized":true,"notificationSoundEnabled":true,"pixelRatio":1,"platform":"windows","power":100,"safeArea":{"bottom":692,"height":692,"left":0,"right":414,"top":0,"width":414},"screenHeight":736,"screenWidth":414,"statusBarHeight":20,"system":"Windows 10 x64","theme":"light","version":"7.0.9","wifiEnabled":true,"windowHeight":692,"windowWidth":414,"SDKVersion":"2.13.2","devicePixelRatio":1,"safeAreaInsets":{"top":0,"left":0,"right":0,"bottom":0}}'  # 设备信息，抓包抓到整段复制过来就行，不要编码后的
+   user_id = 123456  # 用户id
+   team_num = ""  # 不知道是啥，反正我是空的
+   randSleepTime = 3  # 最长多少秒后提交本题答案[0:9]，题目本身有读题时间（字数/10），不计算在内
+   ```
+
+5. 运行`一起刷党史.py`
 
    `python 一起刷党史.py`
 
