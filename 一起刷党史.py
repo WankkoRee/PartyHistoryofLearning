@@ -7,8 +7,10 @@ import hashids
 from typing import Tuple
 
 # 用户信息设置
-device_info = ''  # 设备信息，抓包抓到整段复制过来就行，不要编码后的
-user_id = 0  # 用户id
+device_info = '安装hashids
+
+pip install hashids'  # 设备信息，抓包抓到整段复制过来就行，不要编码后的
+user_id = t159875325846xvn  # 用户id
 team_num = ""  # 不知道是啥，反正我是空的
 randSleepTime = 3  # 最长多少秒后提交本题答案[0:9]，题目本身有读题时间（字数/10），不计算在内
 
