@@ -74,7 +74,7 @@ def start(pk_user_id) -> Tuple[int, list, list, str]:
         sleeptime.append(len(q['content']) // 10)
         for o in q['options']:
             if h.decode(o['is_answer'])[2] == 1:
-                answer_idsList.append(q['id'])
+                answer_idsList.append(o['id'])
                 break
     answer_ids = ",".join([str(i) for i in answer_idsList])
     return ret['data']['pk_datas']['pk_info']['score'], question_idsList, sleeptime, answer_ids
