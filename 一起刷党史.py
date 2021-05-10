@@ -159,5 +159,5 @@ if __name__ == '__main__':
         m_experience = int(m_score * 0.1 + max(0, m_right_counts - 1) + 5)
         m_is_win = 1 if m_score > m_pk_score else 0
         level, lever, exp, nextexp = submit_all(m_question_ids, m_times, m_score, m_score_ids, m_experience, m_is_win, m_answer_ids, m_right_counts)
-        print(f"现在为{level} LV{lever}, 升级还需{nextexp - exp}经验")
+        print(f"现在为{level} LV{lever}, 现有{exp}经验, 升级还需{nextexp - exp}经验")
         time.sleep(2)
