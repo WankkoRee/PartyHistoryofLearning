@@ -1,0 +1,91 @@
+<view class="index-all data-v-57280228">
+    <view bindtap="__e" class="close-music data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'musicSwitch',['$event'] ] ] ] ]}}" hoverClass="opacity">
+        <image class="data-v-57280228" src="../../static/music_icon.png" wx:if="{{isMusic}}"></image>
+        <image class="data-v-57280228" src="../../static/music_icon2.png" wx:else></image>
+    </view>
+    <view class="index-content data-v-57280228" wx:if="{{show_home_menus}}">
+        <image class="bg-img data-v-57280228" src="../../static/index_bg2.png"></image>
+        <view class="data-v-57280228">
+            <view class="content-title data-v-57280228">
+                <view class="onBothCenter font-25size font-boldweight data-v-57280228">团中央宣传部</view>
+                <view class="onBothCenter mar-10top font-25size font-boldweight data-v-57280228">中国青年报社</view>
+            </view>
+            <view class="menus-btn onBothCenter data-v-57280228">
+                <view class="data-v-57280228">
+                    <view class="onBothCenter data-v-57280228">
+                        <image bindtap="__e" class="game-imgs data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['../pvp/pvp'] ] ] ] ]}}" hoverClass="opacity" src="../../static/game_btn.png"></image>
+                        <button class="friendgame-btn mar-5left data-v-57280228" hoverClass="opacity" openType="share" wx:if="{{has_login}}">
+                            <image class="game-imgs data-v-57280228" src="../../static/friendgame_btn.png"></image>
+                        </button>
+                        <button bindtap="__e" class="friendgame-btn mar-5left data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['$event'] ] ] ] ]}}" hoverClass="opacity" wx:else>
+                            <image class="game-imgs data-v-57280228" src="../../static/friendgame_btn.png"></image>
+                        </button>
+                        <image bindtap="__e" class="game-imgs mar-5left data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'isAddGroup',['group'] ] ] ] ]}}" src="../../static/team_competition.png"></image>
+                        <image bindtap="__e" class="game-imgs mar-5left data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'isAddGroup',['department'] ] ] ] ]}}" hoverClass="opacity" src="../../static/department.png"></image>
+                    </view>
+                    <view class="onBothCenter data-v-57280228">
+                        <view class="onBothEnd other-btn data-v-57280228">
+                            <view class="data-v-57280228">
+                                <view class="data-v-57280228">
+                                    <image bindtap="__e" class="friend-img mar-20left data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['../../packageA/pages/exam-friend/exam-friend'] ] ] ] ]}}" hoverClass="opacity" src="../../static/friend_btn.png"></image>
+                                </view>
+                                <view bindtap="__e" class="data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['../ranking-list/ranking-list'] ] ] ] ]}}" hoverClass="opacity">
+                                    <image class="ranking-img data-v-57280228" src="../../static/ranking_list.png"></image>
+                                </view>
+                            </view>
+                            <view class="myinfo-box data-v-57280228">
+                                <image class="myinfo-img data-v-57280228" src="../../static/myinfo.png"></image>
+                                <view class="myinfo-detail data-v-57280228">
+                                    <view class="data-v-57280228">
+                                        <view bindtap="__e" class="to-myinfo data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['../../packageA/pages/myinfo-poster/myinfo-poster?type=rank_user&user_id='+userInfo.id] ] ] ] ]}}" hoverClass="opacity" wx:if="{{has_login}}"></view>
+                                        <view bindtap="__e" class="to-myinfo data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toLogin',['$event'] ] ] ] ]}}" hoverClass="opacity" wx:else></view>
+                                        <image class="myinfo-ava data-v-57280228" src="{{userInfo.avatar}}" wx:if="{{has_login}}"></image>
+                                        <image class="defualt-ava data-v-57280228" src="../../static/default_ava.png" wx:else></image>
+                                        <view class="font-24size myinfo-text myinfo-text-top data-v-57280228">
+                                            <view class="data-v-57280228">经验值</view>
+                                            <view class="mar-10left data-v-57280228" wx:if="{{has_login}}">{{userInfo.experience}}</view>
+                                        </view>
+                                        <view class="font-24size myinfo-text data-v-57280228">
+                                            <view class="data-v-57280228">学习等级</view>
+                                            <view class="mar-10left data-v-57280228" wx:if="{{has_login}}">{{userInfo.expInfo.lever}}</view>
+                                        </view>
+                                        <view class="myinfo-name onBothCenter single-line-crop1 data-v-57280228" wx:if="{{has_login}}">{{userInfo.nickname}}</view>
+                                        <view class="myinfo-name onBothCenter data-v-57280228" wx:else>未登录</view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="data-v-57280228" style="text-align:end;position:relative;">
+                                <view class="data-v-57280228">
+                                    <image bindtap="__e" class="code-img data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['../answer/answer?type=rank_bot&pk_user_id=1&is_study_room=true'] ] ] ] ]}}" hoverClass="opacity" src="../../static/studyhome_btn.png"></image>
+                                </view>
+                                <view bindtap="__e" class="data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'toOtherPage',['../wrong-book/wrong-book'] ] ] ] ]}}" hoverClass="opacity">
+                                    <image class="mistak-img data-v-57280228" src="../../static/mistak_btn.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="index-content data-v-57280228" wx:else>
+        <image class="bg-img data-v-57280228" src="../../static/index_bg.png"></image>
+        <view class="content-title data-v-57280228">
+            <view class="onBothCenter font-25size font-boldweight data-v-57280228">团中央宣传部</view>
+            <view class="onBothCenter mar-10top font-25size font-boldweight data-v-57280228">中国青年报社</view>
+        </view>
+        <view class="secondmenus-btn onBothCenter data-v-57280228">
+            <view class="data-v-57280228">
+                <button bindtap="__e" class="auth-btn data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'newGetUserInfo',['$event'] ] ] ] ]}}" hoverClass="opacity" lang="zh_CN" wx:if="{{!has_login&&isUserProfileAPI}}">
+                    <image class="menus-img data-v-57280228" src="../../static/ready_btn.png"></image>
+                </button>
+                <button bindgetuserinfo="__e" class="auth-btn data-v-57280228" data-event-opts="{{[ [ 'getuserinfo',[ [ 'bindGetUserInfo',['$event'] ] ] ] ]}}" hoverClass="opacity" lang="zh_CN" openType="getUserInfo" wx:if="{{!has_login&&!isUserProfileAPI}}">
+                    <image class="menus-img data-v-57280228" src="../../static/ready_btn.png"></image>
+                </button>
+                <button bindtap="__e" class="auth-btn data-v-57280228" data-event-opts="{{[ [ 'tap',[ [ 'notReady',['$event'] ] ] ] ]}}" hoverClass="opacity" wx:if="{{has_login}}">
+                    <image class="menus-img data-v-57280228" src="../../static/ready_btn.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>

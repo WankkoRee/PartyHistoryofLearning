@@ -1,0 +1,38 @@
+<view class="box data-v-0bdea0b4">
+    <image mode class="box-bg data-v-0bdea0b4" src="../../static/rankinglist_bg.png.jpg"></image>
+    <view class="head-box onBothEnd data-v-0bdea0b4">
+        <image mode bindtap="__e" class="head-left head-image data-v-0bdea0b4" data-event-opts="{{[ [ 'tap',[ [ 'onPreviousQuestion',['$event'] ] ] ] ]}}" src="../../static/7.png"></image>
+        <view class="head-content font-50size font-400weight data-v-0bdea0b4">
+            <text class="data-v-0bdea0b4" wx:if="{{total}}">{{current_index+1+'/'+total}}</text>
+            <text class="data-v-0bdea0b4" wx:else>0/0</text>
+        </view>
+        <image mode bindtap="__e" class="head-right head-image data-v-0bdea0b4" data-event-opts="{{[ [ 'tap',[ [ 'onNextQuestion',['$event'] ] ] ] ]}}" src="../../static/8.png"></image>
+    </view>
+    <view class="content-box data-v-0bdea0b4">
+        <view class="content-head onBothCenter data-v-0bdea0b4">
+            <image mode class="data-v-0bdea0b4" src="../../static/9.png"></image>
+        </view>
+        <view class="content data-v-0bdea0b4">
+            <view class="content-title2 onBothCenter data-v-0bdea0b4" wx:if="{{no_data}}">
+                <text class="font-32size data-v-0bdea0b4">{{no_data_text}}</text>
+            </view>
+            <view class="data-v-0bdea0b4" wx:else>
+                <view class="content-title onXCenter data-v-0bdea0b4" wx:if="{{$root.m0}}">
+                    <text class="font-38size font-600weight data-v-0bdea0b4">{{wrong_book.question_info.content}}</text>
+                </view>
+                <view class="content-content font-33size font-normalWeight data-v-0bdea0b4" wx:if="{{$root.m1&&$root.m2}}">
+                    <view class="content-row onBothCenter data-v-0bdea0b4" wx:for="{{wrong_book.question_info.options}}" wx:key="index">
+                        <view class="onXCenter content-row-row data-v-0bdea0b4">
+                            <view class="{{['answer-box onBothCenter data-v-0bdea0b4',item.is_answer==1?'light-green':'yellow']}}">
+                                <text class="data-v-0bdea0b4">{{item.content}}</text>
+                            </view>
+                            <view class="answer-image onBothCenter data-v-0bdea0b4">
+                                <image mode class="data-v-0bdea0b4" src="../../static/answer_feet.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "看视频加油",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "txv-video": "plugin://wxa75efa648b60994b/video"
+    }
+}

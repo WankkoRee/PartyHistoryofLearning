@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "选择支部",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "search-card": "/packageA/components/search-card/search-card"
+    }
+}

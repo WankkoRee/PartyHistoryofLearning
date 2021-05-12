@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "我的支部",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "swiper-marquee": "/packageA/components/swiper-marquee/swiper-marquee"
+    }
+}

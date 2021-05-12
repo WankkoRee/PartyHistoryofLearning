@@ -1,0 +1,115 @@
+.card-box.data-v-377d3682 {
+    width: 536rpx;
+    height: 441rpx;
+    position: relative;
+}
+
+.card-card-box.data-v-377d3682 {
+    width: 100%;
+    height: 100%;
+    background: #F5C142;
+    border: 5rpx solid #3E030E;
+    border-radius: 30rpx;
+    position: relative;
+    z-index: 1;
+}
+
+.bg-card.data-v-377d3682 {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 5rpx solid #3E030E;
+    border-radius: 30rpx;
+    position: absolute;
+    top: 10rpx;
+}
+
+.bg-card image.data-v-377d3682 {
+    width: 100%;
+    height: 100%;
+}
+
+.content-title-box.data-v-377d3682 {
+    position: relative;
+    width: 502rpx;
+    height: 84rpx;
+    top: 37rpx;
+    left: -37rpx;
+}
+
+.content-title.data-v-377d3682 {
+    width: 100%;
+    height: 100%;
+    background: #E55354;
+    border: 5rpx solid #3E030E;
+    border-radius: 20rpx;
+    position: relative;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+.content-title-bg.data-v-377d3682 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 5rpx solid #3E030E;
+    border-radius: 20rpx;
+    top: 10rpx;
+    overflow: hidden;
+}
+
+.content-title-bg image.data-v-377d3682 {
+    width: 100%;
+    height: 100%;
+}
+
+.content-box.data-v-377d3682 {
+    margin-top: 86rpx;
+    padding: 0 33rpx;
+}
+
+.content-info.data-v-377d3682 {
+    height: 66rpx;
+    width: 210rpx;
+    color: #FFFFFF;
+    border-bottom: 2rpx solid #FFFFFF;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 0 20rpx;
+}
+
+.content-info>text.data-v-377d3682:nth-child(2) {
+    color: #333333;
+    font-size: 46rpx;
+    font-weight: 500;
+    margin: 0 10rpx;
+}
+
+.content-box-right image.data-v-377d3682 {
+    width: 171rpx;
+    height: 173rpx;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 5rpx solid #3E030E;
+}
+
+.card-button.data-v-377d3682 {
+    margin-top: 26rpx;
+}
+
+.card-button image.data-v-377d3682 {
+    width: 227rpx;
+    height: 83rpx;
+    background: #FFFFFF;
+    border-radius: 18rpx;
+}
+
+.card-button-right.data-v-377d3682 {
+    margin-left: 50rpx;
+}

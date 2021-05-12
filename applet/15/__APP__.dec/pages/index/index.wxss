@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+.index-content.data-v-57280228 {
+    color: #fff;
+    width: 750rpx;
+}
+
+.content-title.data-v-57280228 {
+    position: fixed;
+    top: 60rpx;
+    left: 0;
+    z-index: 1;
+    width: 750rpx;
+    letter-spacing: 10rpx;
+}
+
+.bg-img.data-v-57280228 {
+    width: 750rpx;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.menus-btn.data-v-57280228 {
+    width: 750rpx;
+    position: fixed;
+    bottom: 40rpx;
+    left: 0;
+    z-index: 1;
+}
+
+.menus-img.data-v-57280228 {
+    width: 300rpx;
+    height: 75rpx;
+}
+
+.game-imgs.data-v-57280228 {
+    width: 172rpx;
+    height: 250rpx;
+}
+
+.friendgame-btn.data-v-57280228 {
+    width: 172rpx;
+    height: 250rpx;
+    padding: 0;
+    background-color: transparent;
+    margin-right: 0;
+}
+
+.other-btn.data-v-57280228 {
+    margin-top: 40rpx;
+    width: 635rpx;
+    position: relative;
+}
+
+.friend-img.data-v-57280228 {
+    width: 146rpx;
+    height: 87rpx;
+}
+
+.ranking-img.data-v-57280228 {
+    width: 220rpx;
+    height: 174rpx;
+}
+
+.myinfo-box.data-v-57280228 {
+    position: absolute;
+    bottom: 40rpx;
+    left: 154rpx;
+}
+
+.myinfo-img.data-v-57280228 {
+    width: 330rpx;
+    height: 250rpx;
+}
+
+.myinfo-detail.data-v-57280228 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 330rpx;
+    text-align: center;
+}
+
+.to-myinfo.data-v-57280228 {
+    position: absolute;
+    top: 0;
+    left: 78rpx;
+    width: 170rpx;
+    height: 250rpx;
+}
+
+.myinfo-ava.data-v-57280228 {
+    width: 92rpx;
+    height: 92rpx;
+    border-radius: 50%;
+    border: 8rpx solid #3E030E;
+    font-size: 0;
+    background-color: #FFFFFF;
+    margin-top: -1rpx;
+    margin-left: 5rpx;
+}
+
+.defualt-ava.data-v-57280228 {
+    width: 35rpx;
+    height: 56rpx;
+    margin-top: 20rpx;
+    margin-bottom: 30rpx;
+}
+
+.myinfo-text.data-v-57280228 {
+    color: #180704;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.myinfo-text-top.data-v-57280228 {
+    margin-top: -10rpx;
+}
+
+.myinfo-name.data-v-57280228 {
+    width: 138rpx;
+    height: 46rpx;
+    background-color: #271E8E;
+    border-radius: 20rpx;
+    margin-left: 93rpx;
+    margin-top: 5rpx;
+}
+
+.code-img.data-v-57280228 {
+    width: 146rpx;
+    height: 87rpx;
+    margin-right: 16rpx;
+}
+
+.mistak-img.data-v-57280228 {
+    width: 220rpx;
+    height: 174rpx;
+}
+
+.secondmenus-btn.data-v-57280228 {
+    width: 750rpx;
+    position: fixed;
+    bottom: 290rpx;
+    left: 0;
+    z-index: 1;
+}
+
+.auth-btn.data-v-57280228 {
+    width: 300rpx;
+    height: 75rpx;
+    padding: 0;
+    background-color: #FFCE79;
+    border-radius: 40rpx;
+}
+
+.close-music.data-v-57280228 {
+    width: 67rpx;
+    height: 67rpx;
+    border-radius: 50%;
+    position: fixed;
+    right: 38rpx;
+    top: 100rpx;
+    z-index: 2;
+}
+
+.close-music>image.data-v-57280228 {
+    width: 100%;
+    height: 100%;
+}
