@@ -9,7 +9,7 @@ from typing import Tuple
 # 用户信息设置
 device_info = ''  # 设备信息，抓包抓到整段复制过来就行，不要编码后的
 user_id = 0  # 用户id
-team_num = ""  # 不知道是啥，反正我是空的
+team_num = ""  # 团队号，如果加入了团队请额外填写此参数
 randSleepTime = 3  # 最长多少秒后提交本题答案[0:9]，题目本身有读题时间（字数/10），不计算在内
 
 
@@ -25,6 +25,26 @@ def sign(data: dict) -> dict:
 ss = Session()
 preScore = [80, 80, 80, 80, 150]
 h = hashids.Hashids(salt="leadfyy!gogogo")
+appletVersion = "2.0.9"
+
+def update_info() -> int:
+    ret = ss.post(
+        url="https://xds.guanhaihk.com/api/updateInfo",
+        data=sign(
+            {
+                "version": appletVersion,
+                "create_page": "pages/index/index",
+                "timestamp": int(time.time()),
+                "rand": randint(0, 1000000),
+                "user_id": user_id,
+                "platform": "wxmini",
+                "device_info": device_info
+            }
+        )
+    ).json()
+    assert ret['code'] == 0 and ret['msg'] == 'success'
+    return True
+
 
 def choose_user() -> int:
     ret = ss.post(
@@ -36,7 +56,7 @@ def choose_user() -> int:
                 "timestamp": int(time.time()),
                 "rand": randint(0, 1000000),
                 "platform": "wxmini",
-                "version": "2.0.6",
+                "version": appletVersion,
                 "device_info": device_info
             }
         )
@@ -45,21 +65,22 @@ def choose_user() -> int:
     return ret['data']['pk_user']['id']
 
 
-def start(pk_user_id) -> Tuple[int, list, list, str]:
+def start(pk_user_id) -> Tuple[int, list, list, list]:
     ret = ss.post(
         url="https://xds.guanhaihk.com/api/game/start",
         data=sign(
             {
                 "type":"rank_user",
                 "pk_user_id": pk_user_id,
+                "enter_type": "not_rank_quanzi",
                 "create_page": "pages/pvp/pvp",
                 "timestamp": int(time.time()),
                 "rand": randint(0, 1000000),
                 "user_id": user_id,
                 "platform": "wxmini",
-                "version": "2.0.6",
+                "version": appletVersion,
                 "device_info": device_info,
-                "enter_type": "not_rank_quanzi",
+                "_enter_type": "not_rank_quanzi",
                 "_pk_user_id": pk_user_id,
                 "_type": "rank_user"
             }
@@ -76,11 +97,10 @@ def start(pk_user_id) -> Tuple[int, list, list, str]:
             if h.decode(o['is_answer'])[2] == 1:
                 answer_idsList.append(o['id'])
                 break
-    answer_ids = ",".join([str(i) for i in answer_idsList])
-    return ret['data']['pk_datas']['pk_info']['score'], question_idsList, sleeptime, answer_ids
+    return ret['data']['pk_datas']['pk_info']['score'], question_idsList, sleeptime, answer_idsList
 
 
-def submit(pk_user_id, question_id, score, rightCount) -> bool:
+def submit(pk_user_id, question_id, answer_id, score, rightCount) -> bool:
     ret = ss.post(
         url="https://xds.guanhaihk.com/api/wrongQuestion/submit",
         data=sign(
@@ -90,15 +110,17 @@ def submit(pk_user_id, question_id, score, rightCount) -> bool:
                 "is_right": 1,
                 "score": score,
                 "rightCount": rightCount,
+                "type": "rank_user",
+                "answer_id": answer_id,
                 "create_page": "pages/answer/answer",
                 "timestamp": int(time.time()),
                 "rand": randint(0, 1000000),
                 "platform": "wxmini",
-                "version": "2.0.6",
+                "version": appletVersion,
                 "device_info": device_info,
                 "enter_type": "not_rank_quanzi",
                 "pk_user_id": pk_user_id,
-                "type": "rank_user"
+                "_type": "rank_user"
             }
         )
     ).json()
@@ -120,13 +142,15 @@ def submit_all(question_ids, times, score, score_ids, experience, is_win, answer
                 "right_counts": right_counts,
                 "user_id": user_id,
                 "team_num": team_num,
+                "type": "rank_user",
+                "enter_type": "not_rank_quanzi",
                 "create_page": "packageA/pages/closing/closing",
                 "timestamp": int(time.time()),
                 "rand": randint(0, 1000000),
                 "platform": "wxmini",
-                "version": "2.0.6",
+                "version": appletVersion,
                 "device_info": device_info,
-                "enter_type": "not_rank_quanzi"
+                "_enter_type": "not_rank_quanzi"
             }
         )
     ).json()
@@ -134,16 +158,17 @@ def submit_all(question_ids, times, score, score_ids, experience, is_win, answer
     return ret['data']['user']['expInfo']['name'], ret['data']['user']['expInfo']['lever'], ret['data']['user']['experience'], ret['data']['user']['expInfo']['next_min_score']
 
 if __name__ == '__main__':
+    update_info()
     while True:
         m_pk_user_id = choose_user()
         print("获取到对手", end=" ")
-        m_pk_score, m_question_idsList, m_sleeptime, m_answer_ids = start(m_pk_user_id)
+        m_pk_score, m_question_idsList, m_sleeptime, m_answer_idsList = start(m_pk_user_id)
         print("获取到题目", end=" ")
         m_timesList = []
         m_score = 0
         m_score_idsList = []
         m_right_counts = 0
-        for m_id, m_st in zip(m_question_idsList, m_sleeptime):
+        for m_id, m_ans, m_st in zip(m_question_idsList, m_answer_idsList, m_sleeptime):
             m_usetime = randint(0, randSleepTime)
             m_timesList.append(m_usetime)
             m_sc = int(preScore[m_right_counts] * (10 - m_usetime) / 10)
@@ -151,9 +176,10 @@ if __name__ == '__main__':
             m_score_idsList.append(m_sc)
             time.sleep(m_st + m_usetime)
             m_right_counts += 1
-            assert submit(m_pk_user_id, m_id, m_sc, m_right_counts)
+            assert submit(m_pk_user_id, m_id, m_ans, m_sc, m_right_counts)
             print(f"已答第{m_right_counts}题", end=" ")
         m_question_ids = ",".join([str(i) for i in m_question_idsList])
+        m_answer_ids = ",".join([str(i) for i in m_answer_idsList])
         m_times = ",".join([str(i) for i in m_timesList])
         m_score_ids = ",".join([str(i) for i in m_score_idsList])
         m_experience = int(m_score * 0.1 + max(0, m_right_counts - 1) + 5)
