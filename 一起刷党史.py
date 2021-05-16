@@ -2,7 +2,7 @@ import time
 from requests import Session
 from json import dumps
 from hashlib import md5, sha1
-from random import randint
+from random import randint, random
 import hashids
 from typing import Tuple
 
@@ -11,6 +11,7 @@ device_info = ''  # 设备信息，抓包抓到整段复制过来就行，不要
 user_id = 0  # 用户id
 team_num = ""  # 团队号，如果加入了团队请额外填写此参数
 randSleepTime = 3  # 最长多少秒后提交本题答案[0:9]，题目本身有读题时间（字数/10），不计算在内
+trueRate = 0.5  # 正确率，取值范围[0:1]
 
 
 # 以下勿动
@@ -26,6 +27,7 @@ ss = Session()
 preScore = [80, 80, 80, 80, 150]
 h = hashids.Hashids(salt="leadfyy!gogogo")
 appletVersion = "2.0.9"
+
 
 def update_info() -> int:
     ret = ss.post(
@@ -65,7 +67,7 @@ def choose_user() -> int:
     return ret['data']['pk_user']['id']
 
 
-def start(pk_user_id) -> Tuple[int, list, list, list]:
+def start(pk_user_id) -> Tuple[int, list, list, list, list]:
     ret = ss.post(
         url="https://xds.guanhaihk.com/api/game/start",
         data=sign(
@@ -90,14 +92,25 @@ def start(pk_user_id) -> Tuple[int, list, list, list]:
     question_idsList = []
     sleeptime = []
     answer_idsList = []
+    canTrueList = []
     for q in ret['data']['questions']:
         question_idsList.append(q['id'])
         sleeptime.append(len(q['content']) // 10)
-        for o in q['options']:
-            if h.decode(o['is_answer'])[2] == 1:
-                answer_idsList.append(o['id'])
-                break
-    return ret['data']['pk_datas']['pk_info']['score'], question_idsList, sleeptime, answer_idsList
+        canTrue = random() < trueRate
+        canTrueList.append(canTrue)
+        answer = None
+        if canTrue:
+            for o in q['options']:
+                if h.decode(o['is_answer'])[2] == 1:
+                    answer = o['id']
+                    break
+        else:
+            o = q['options'][randint(0, len(q['options']) - 1)]
+            while h.decode(o['is_answer'])[2] == 1:
+                o = q['options'][randint(0, len(q['options'])-1)]
+            answer = o['id']
+        answer_idsList.append(answer)
+    return ret['data']['pk_datas']['pk_info']['score'], question_idsList, sleeptime, answer_idsList, canTrueList
 
 
 def submit(pk_user_id, question_id, answer_id, score, rightCount) -> bool:
@@ -162,20 +175,23 @@ if __name__ == '__main__':
     while True:
         m_pk_user_id = choose_user()
         print("获取到对手", end=" ")
-        m_pk_score, m_question_idsList, m_sleeptime, m_answer_idsList = start(m_pk_user_id)
+        m_pk_score, m_question_idsList, m_sleeptime, m_answer_idsList, m_canTrueList = start(m_pk_user_id)
         print("获取到题目", end=" ")
         m_timesList = []
         m_score = 0
         m_score_idsList = []
         m_right_counts = 0
-        for m_id, m_ans, m_st in zip(m_question_idsList, m_answer_idsList, m_sleeptime):
+        for m_id, m_ans, m_st, m_ct in zip(m_question_idsList, m_answer_idsList, m_sleeptime, m_canTrueList):
             m_usetime = randint(0, randSleepTime)
             m_timesList.append(m_usetime)
             m_sc = int(preScore[m_right_counts] * (10 - m_usetime) / 10)
-            m_score += m_sc
-            m_score_idsList.append(m_sc)
+            if m_ct:
+                m_score += m_sc
+                m_score_idsList.append(m_sc)
+                m_right_counts += 1
+            else:
+                m_score_idsList.append(0)
             time.sleep(m_st + m_usetime)
-            m_right_counts += 1
             assert submit(m_pk_user_id, m_id, m_ans, m_sc, m_right_counts)
             print(f"已答第{m_right_counts}题", end=" ")
         m_question_ids = ",".join([str(i) for i in m_question_idsList])
