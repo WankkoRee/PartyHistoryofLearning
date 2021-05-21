@@ -191,10 +191,10 @@ if __name__ == '__main__':
             m_timesList.append(m_usetime)
             m_sc = int(preScore[x] * (10 - m_usetime) / 10)
             if m_ct:
-                if 0 <= x <= 3:  # TODO 官方小程序中最后一题并未计入，可能得等官方修复
-                    m_right_counts += 1
+                m_right_counts += 1
             else:
                 m_sc = 0
+                m_right_counts = 0  # 这个是连续答对次数
             m_score += m_sc
             m_score_idsList.append(m_sc)
             time.sleep(m_st + m_usetime)
@@ -204,8 +204,12 @@ if __name__ == '__main__':
         m_answer_ids = ",".join([str(i) for i in m_answer_idsList])
         m_times = ",".join([str(i) for i in m_timesList])
         m_score_ids = ",".join([str(i) for i in m_score_idsList])
-        m_experience = int(m_score * 0.1 + max(0, m_right_counts - 1) + 5)
-        m_is_win = 1 if m_score > m_pk_score else 0
+        if m_score >= m_pk_score:
+            m_is_win = 1
+            m_experience = int(m_score * 0.1 + max(0, m_right_counts - 1) + 5)
+        else:
+            m_is_win = 0
+            m_experience = max(int(m_score * 0.1 + max(0, m_right_counts - 1) - 5), 0)
         level, lever, exp, nextexp = submit_all(m_question_ids, m_times, m_score, m_score_ids, m_experience, m_is_win, m_answer_ids, m_right_counts)
         print(f"现在为{level} LV{lever}, 现有{exp}经验, 升级还需{nextexp - exp}经验")
         time.sleep(2)
