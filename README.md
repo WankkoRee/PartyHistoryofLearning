@@ -2,7 +2,7 @@
 
 实现gqtzy的一起学党史小程序自动化
 
-当前脚本对应小程序版本：![version](https://img.shields.io/badge/version-2.0.9-brightgreen)
+当前脚本对应小程序版本：![version](https://img.shields.io/badge/version-2.1.0-brightgreen)
 
 ## 使用说明
 
