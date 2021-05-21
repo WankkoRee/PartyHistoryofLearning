@@ -1,0 +1,47 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/ranking-list/ranking-list",
+        "pages/answer/answer",
+        "pages/wrong-book/wrong-book",
+        "pages/pvp/pvp"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#051044",
+        "navigationBarTitleText": "一起学党史",
+        "navigationBarTextStyle": "white"
+    },
+    "subPackages": [
+        {
+            "root": "packageA/",
+            "pages": [
+                "pages/exam-friend/exam-friend",
+                "pages/set-questions/set-questions",
+                "pages/video/video",
+                "pages/group/group",
+                "pages/closing/closing",
+                "pages/update/update",
+                "pages/create-group/create-group",
+                "pages/myinfo-poster/myinfo-poster",
+                "pages/group-poster/group-poster",
+                "pages/select-department/select-department",
+                "pages/first-department/first-department",
+                "pages/department-index/department-index",
+                "pages/department-ranking-list/department-ranking-list",
+                "pages/department-member-list/department-member-list"
+            ]
+        },
+        {
+            "root": "packageB/",
+            "pages": [
+                "pages/change-myinfo/change-myinfo",
+                "pages/special-competition/special-competition",
+                "pages/reading-day/reading-day",
+                "pages/special-ranking-list/special-ranking-list",
+                "pages/video/buchong",
+                "pages/video/buchongres"
+            ]
+        }
+    ]
+}

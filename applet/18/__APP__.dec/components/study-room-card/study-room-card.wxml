@@ -1,0 +1,53 @@
+<view class="box data-v-377d3682" wx:if="{{showModal}}">
+    <view class="card-box data-v-377d3682">
+        <view class="card-card-box data-v-377d3682">
+            <view class="content-title-box data-v-377d3682">
+                <view class="content-title onBothCenter data-v-377d3682">
+                    <text class="font-40size font-boldweight data-v-377d3682">{{'恭喜你完成'+title+'！'}}</text>
+                </view>
+                <view class="content-title-bg data-v-377d3682">
+                    <image mode class="data-v-377d3682" src="../../static/answer_feet.png"></image>
+                </view>
+            </view>
+            <view class="content-box onBothEnd data-v-377d3682">
+                <view class="content-box-left data-v-377d3682">
+                    <view class="content-info data-v-377d3682">
+                        <text class="data-v-377d3682">得分</text>
+                        <text class="data-v-377d3682">{{score}}</text>
+                    </view>
+                    <view class="content-info data-v-377d3682">
+                        <text class="data-v-377d3682">连续答对</text>
+                        <text class="data-v-377d3682" wx:if="{{rightCount}}">{{rightCount}}</text>
+                        <text class="data-v-377d3682" wx:else>0</text>
+                        <text class="data-v-377d3682">题</text>
+                    </view>
+                    <view class="content-info data-v-377d3682" style="border-bottom:none;">
+                        <text class="data-v-377d3682">经验</text>
+                        <text class="data-v-377d3682">{{experience}}</text>
+                    </view>
+                </view>
+                <view class="content-box-right data-v-377d3682">
+                    <image mode class="data-v-377d3682" src="{{avatar}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="bg-card data-v-377d3682">
+            <image mode class="data-v-377d3682" src="../../static/answer_feet.png"></image>
+        </view>
+    </view>
+    <view class="card-button onBothCenter data-v-377d3682">
+        <view bindtap="__e" class="card-button-left data-v-377d3682" data-event-opts="{{[ [ 'tap',[ [ 'toAnswer',['$event'] ] ] ] ]}}" wx:if="{{title!='挑战'}}">
+            <image mode class="data-v-377d3682" src="../../static/continue_answer.png" wx:if="{{!is_to_answer}}"></image>
+            <image mode class="data-v-377d3682" src="../../../static/on_continue_answer.png" wx:else></image>
+        </view>
+        <view bindtap="__e" class="{{['data-v-377d3682',title!='挑战'?'card-button-right':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+            <image mode class="data-v-377d3682" src="../../static/close.png" wx:if="{{!is_close}}"></image>
+            <image mode class="data-v-377d3682" src="../../static/on_close.png" wx:else></image>
+        </view>
+    </view>
+    <view class="onBothCenter data-v-377d3682" wx:if="{{studyHome}}">
+        <view bindtap="__e" class="data-v-377d3682" data-event-opts="{{[ [ 'tap',[ [ 'buchong',['$event'] ] ] ] ]}}">
+            <image mode class="data-v-377d3682" src="../../static/bucong.png" style="width:496rpx;height:101rpx;background-color:rgba(0,0,0,0);"></image>
+        </view>
+    </view>
+</view>

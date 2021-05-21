@@ -1,0 +1,79 @@
+<view class="data-v-514287f4">
+    <view class="box data-v-514287f4">
+        <view class="head-box onBothEnd data-v-514287f4">
+            <image mode class="data-v-514287f4" src="../../static/answer_head.png" wx:if="{{!isStudyRoom&&!isExamFriend}}"></image>
+            <view class="question-number data-v-514287f4">{{currentIndex+1+'/'+currentQuestions.length}}</view>
+            <view class="head-info-box data-v-514287f4">
+                <view class="data-v-514287f4" style="width:144rpx;">
+                    <view class="font-30size color-white single-line-crop1 data-v-514287f4" style="text-align:right;">{{user_info.nickname||''}}</view>
+                    <view class="head-info1 onXCenter data-v-514287f4">
+                        <image mode class="data-v-514287f4" src="{{user_info.avatar}}"></image>
+                    </view>
+                </view>
+                <view class="head-info1-right font-36size data-v-514287f4">
+                    <text class="data-v-514287f4">{{'Lv.'+(user_info.expInfo.lever||'')}}</text>
+                </view>
+                <view class="head-info2 onXCenter data-v-514287f4">
+                    <text class="font-40size data-v-514287f4">{{'积分'+$root.m0}}</text>
+                </view>
+                <view class="head-info3 onXCenter data-v-514287f4">
+                    <text class="font-24size data-v-514287f4">{{user_info.expInfo.name||''}}</text>
+                </view>
+            </view>
+            <view class="head-info-box2 data-v-514287f4" wx:if="{{!isStudyRoom&&!isExamFriend}}">
+                <view class="data-v-514287f4" style="width:144rpx;">
+                    <view class="font-30size color-white single-line-crop1 data-v-514287f4" style="text-align:left;">{{pk_user_info.nickname||''}}</view>
+                    <view class="head-info1 onXCenter data-v-514287f4">
+                        <image mode class="data-v-514287f4" src="{{pk_user_info.avatar}}" style="margin-left:18rpx;"></image>
+                    </view>
+                </view>
+                <view class="head-info1-left font-36size data-v-514287f4">
+                    <text class="data-v-514287f4">{{'Lv.'+(pk_user_info.expInfo.lever||'')}}</text>
+                </view>
+                <view class="head-info2 onXCenter data-v-514287f4" style="margin-top:-62rpx;">
+                    <text class="font-40size data-v-514287f4">{{'积分'+$root.m1}}</text>
+                </view>
+                <view class="head-info3 onXCenter data-v-514287f4">
+                    <text class="font-24size data-v-514287f4">{{pk_user_info.expInfo.name||''}}</text>
+                </view>
+            </view>
+            <view class="countdown-box data-v-514287f4">
+                <view class="data-v-514287f4">{{secTxt}}</view>
+            </view>
+        </view>
+        <view class="content-box data-v-514287f4">
+            <image mode class="content-background-image data-v-514287f4" src="../../static/answer_content.jpg"></image>
+            <image mode class="star1 data-v-514287f4" src="../../static/star1.png"></image>
+            <image mode class="star2 data-v-514287f4" src="../../static/star2.png"></image>
+            <view class="content data-v-514287f4">
+                <view class="content-title data-v-514287f4">
+                    <text class="font-32size data-v-514287f4">{{content}}</text>
+                </view>
+                <view class="content-answer-box data-v-514287f4">
+                    <view class="content-answer data-v-514287f4" wx:for="{{options}}" wx:key="index">
+                        <view bindtap="__e" class="{{[ 'answer-box onBothCenter data-v-514287f4',optionsStyles[index] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectOne',[index] ] ] ] ]}}">
+                            <text class="data-v-514287f4" style="{{'padding-right:'+(isRight&&selectIndex==index?paddingRight:'20rpx')+';'}}">{{item.content}}</text>
+                        </view>
+                        <image class="content-hooke data-v-514287f4" src="../../static/hooke.png" wx:if="{{isRight&&selectIndex==index}}"></image>
+                        <view class="answer-feet-box onBothCenter data-v-514287f4" hoverClass="white">
+                            <image mode class="data-v-514287f4" src="../../static/answer_feet.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{options.length>0}}">
+                <view class="progress-bar bar-left data-v-514287f4">
+                    <view class="percent data-v-514287f4" style="{{'height:'+ourPercent+'%'+';'}}"></view>
+                </view>
+                <view class="progress-bar bar-right data-v-514287f4" wx:if="{{!isStudyRoom&&!isExamFriend}}">
+                    <view class="percent data-v-514287f4" style="{{'height:'+enemyPercent+'%'+';'}}"></view>
+                </view>
+            </block>
+        </view>
+        <view class="mask-box onXCenter data-v-514287f4" wx:if="{{selfStudyModal}}">
+            <view class="study-room-card data-v-514287f4">
+                <study-room-card avatar="{{user_info.avatar}}" bind:__l="__l" bind:closeStudyRoomCard="__e" bind:onBuchong="__e" class="data-v-514287f4" data-event-opts="{{[ [ '^onBuchong',[ ['onBuchong'] ] ],[ '^closeStudyRoomCard',[ ['onCloseStudyRoomCard'] ] ] ]}}" experience="{{experience}}" rightCount="{{max_right_count}}" scoreResult="{{scoreResult}}" showModal="{{selfStudyModal}}" special_id="{{special_id}}" studyHome="{{study_home}}" title="{{complete_title}}" vueId="147945c0-1"></study-room-card>
+            </view>
+        </view>
+    </view>
+</view>

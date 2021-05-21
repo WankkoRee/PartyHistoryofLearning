@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "排行榜",
+    "enablePullDownRefresh": false,
+    "disableScroll": true,
+    "usingComponents": {}
+}

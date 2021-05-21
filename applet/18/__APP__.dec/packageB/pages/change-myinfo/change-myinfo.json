@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "一起学党史",
+    "enablePullDownRefresh": false,
+    "disableScroll": true,
+    "usingComponents": {
+        "search-card-school": "/packageB/components/search-card-school/search-card-school"
+    }
+}

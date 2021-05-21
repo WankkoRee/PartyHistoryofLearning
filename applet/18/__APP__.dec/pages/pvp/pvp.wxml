@@ -1,0 +1,25 @@
+<view class="pvp data-v-d3226848">
+    <image class="pvp-bg data-v-d3226848" src="../../static/pvp.jpg"></image>
+    <view class="onYBothCenter pvp-info left data-v-d3226848" style="{{'top:'+(left_top?left_top+'rpx':'')+';'}}">
+        <view class="pvp-info-img data-v-d3226848">
+            <image class="data-v-d3226848" src="{{user_avatar}}"></image>
+        </view>
+        <view class="font-32size font-boldweight data-v-d3226848">{{user_name}}</view>
+        <view class="font-28size statistics data-v-d3226848">
+            <view class="data-v-d3226848">{{'等级  '+user_lv}}</view>
+            <view class="data-v-d3226848">{{'段位  '+user_g_name}}</view>
+            <view class="data-v-d3226848">{{'经验  '+user_exp}}</view>
+        </view>
+    </view>
+    <view class="onYBothCenter pvp-info right data-v-d3226848" hidden="{{!(pk_name!=='')}}" style="{{'top:'+(right_top?right_top+'rpx':'')+';'}}">
+        <view class="pvp-info-img data-v-d3226848">
+            <image class="data-v-d3226848" src="{{pk_avatar}}"></image>
+        </view>
+        <view class="font-32size font-boldweight data-v-d3226848">{{pk_name}}</view>
+        <view class="font-28size statistics data-v-d3226848">
+            <view class="data-v-d3226848">{{'等级  '+pk_lv}}</view>
+            <view class="data-v-d3226848">{{'段位  '+pk_g_name}}</view>
+            <view class="data-v-d3226848">{{'经验  '+pk_exp}}</view>
+        </view>
+    </view>
+</view>
